@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Sparked = () => {
+const Stacked = () => {
     return ( 
         <div>
-            Sparked
+            Stacked
         </div>
      );
 }
  
-export default Sparked;
+export default Stacked;
