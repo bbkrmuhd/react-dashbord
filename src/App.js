@@ -35,9 +35,7 @@ const App = () => {
             side bar
           </div>
         )}
-        <div className={
-          `'dark:bg-main-bg bg-main-bg min-h-screen w-ful ${activeMenu ? 'ml-72' : 'flex-2'}`
-        }>
+        <div className={`dark:bg-main-bg bg-main-bg min-h-screen w-ful ${activeMenu ? 'ml-72 ': 'flex-2'}`}>
           <div className='fixed md-static bg-main-bg dark:bg-main-dark-bg navBar w-full'>
             <NavBar />
           </div>

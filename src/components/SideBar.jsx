@@ -9,10 +9,18 @@ import { MdOutlineCancel } from 'react-icons/md';
 import { useStateContext } from '../contexts/ContestProvider';
 
 const SideBar = () => {
-    const { activeMenu, setActiveMenu }  = useStateContext()
+    const { activeMenu, setActiveMenu,
+            screenSize, }  = useStateContext()
     const activeLink = "flex items-center gap-5 pl-4 mt-3 pb-2.5 rounded-lg text-white text-md m-2"
     const normalLink = "flex items-center gap-5 pl-4 mt-3 pb-2.5 rounded-lg text-md text-gray-700 \
     dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2"
+
+
+    const handleCloseSideBar = () => {
+        if (activeMenu && screenSize <= 900){
+            setActiveMenu(false)
+        }
+    }
     return (
          <div className='ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10'>
             { activeMenu && (
@@ -23,15 +31,16 @@ const SideBar = () => {
                         <SiShopware /> <span>Shoppy</span>
                     </Link>
                     <TooltipComponent content='Menu' position="BottomCenter">
-                        <button onClick={() => setActiveMenu((prevState) =>  !prevState)} className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden"> 
+                        <button onClick={handleCloseSideBar} className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden"> 
                          <MdOutlineCancel />
+                         
                         </button>
                     </TooltipComponent>
                 </div>
                 <div className='mt-10 '>
-                    {links.map((item) => (
-                        <div >
-                            <p className='text-gray-400 m-3 mt-4 uppercase'>
+                    {links.map((item, key) => (
+                        <div key={key} >
+                            <p   className='text-gray-400 m-3 mt-4 uppercase'>
                             {item.title}
                             </p>
                             {item.links.map((link) => (
