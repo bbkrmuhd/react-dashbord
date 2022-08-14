@@ -10,7 +10,7 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import avatar from '../data/avatar.jpg'
 import  { Cart ,Chat, Notification, UserProfile } from '.'
-import { useStateContext } from '../contexts/ContestProvider';
+import { useStateContext } from '../contexts/ContextProvider';
 
 
 const NavButton = ({title, customFunc, icon, color, dotColor}) => (
