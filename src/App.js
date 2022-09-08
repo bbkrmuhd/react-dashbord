@@ -36,11 +36,10 @@ const App = () => {
           </div>
         )}
         <div className={`dark:bg-main-bg bg-main-bg min-h-screen w-full ${activeMenu ? 'ml-72': 'flex-auto'}`}>
-          <div className='fixed md-static bg-main-bg dark:bg-main-dark-bg navBar w-full'>
+          <div className='fixed md-static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
             <NavBar />
           </div>
   
-
         <div>
             <Routes>
               {/* Dashboard */}
@@ -67,8 +66,8 @@ const App = () => {
               <Route path='/pyramid' element={<Pyramid/>}/>
               <Route path='/line' element={<Line/>}/>
             </Routes>
+            </div>
           </div>
-        </div>
         </div>
         </BrowserRouter>
   </div>
